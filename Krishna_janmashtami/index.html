@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Krishna Janmashtami</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-blue': '#4361ee',
+                        'neon-purple': '#7209b7',
+                        'neon-pink': '#f72585',
+                        'neon-cyan': '#00fff5',
+                        'neon-green': '#39ff14',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .neo-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .animate-blink {
+            animation: blink 1.5s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black font-['Rajdhani'] text-gray-100 min-h-screen">
+    <div id="tsparticles"></div>
+    <div id="preloader" class="fixed inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center z-50">
+        <h1 class="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue animate-blink">
+            राधे राधे
+        </h1>
+    </div>
+    <div class="container mx-auto px-4 py-12">
+        <header id="home" class="text-center mb-16">
+            <h1 class="text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink mb-4 animate-pulse">श्री कृष्ण जन्माष्टमी</h1>
+            <p class="text-3xl text-neon-blue">anādir ādir govindaḥ sarva kāraṇa kāraṇam</p>
+        </header>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+            <div id="life" class="neo-glass rounded-3xl overflow-hidden transform transition duration-500 hover:scale-105">
+                <img src="https://i.ibb.co/2dDDtYX/downloadfile-30.jpg" alt="Lord Krishna" class="w-full h-80 object-cover">
+                <div class="p-8">
+                    <h2 class="text-3xl font-semibold text-neon-pink mb-6">Life of Lord kṛṣṇa</h2>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>Incarnation of Sri Maha Vishnu </li>
+                        <li>Born in Mathura to Devaki and Vasudeva</li>
+                        <li>Raised in Gokul by Nanda and Yashoda</li>
+                        <li>Childhood filled with divine leelas</li>
+                        <li>Known as Murlidhar, the divine flute player</li>
+                        <li>Established the city of Dwarka</li>
+                        <li>Imparted wisdom through Bhagavad Gita</li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            
+               <div id="teachings" class="neo-glass rounded-3xl p-8 transform transition duration-500 hover:scale-105 mb-12" x-data="{ activeTab: 'dharma' }">
+            <h2 class="text-3xl font-semibold text-neon-pink mb-6">Krsna's Teachings for Humanity</h2>
+            <div class="flex mb-4">
+                <button @click="activeTab = 'dharma'" :class="{ 'bg-neon-blue': activeTab === 'dharma' }" class="px-4 py-2 rounded-tl-lg rounded-tr-lg text-white font-semibold mr-2">Dharma</button>
+                <button @click="activeTab = 'karma'" :class="{ 'bg-neon-blue': activeTab === 'karma' }" class="px-4 py-2 rounded-tl-lg rounded-tr-lg text-white font-semibold mr-2">Karma</button>
+                <button @click="activeTab = 'bhakti'" :class="{ 'bg-neon-blue': activeTab === 'bhakti' }" class="px-4 py-2 rounded-tl-lg rounded-tr-lg text-white font-semibold">Bhakti</button>
+            </div>
+            <div x-show="activeTab === 'dharma'" class="text-gray-300">
+                <p>Dharma is the eternal law that governs the universe. Krishna teaches us to follow our dharma, our righteous duty, with sincerity and devotion. By adhering to dharma, we maintain balance in society and in our own lives.</p>
+            </div>
+            <div x-show="activeTab === 'karma'" class="text-gray-300">
+                <p>Karma yoga is the path of selfless action. Krishna instructs us to perform our duties without attachment to the fruits of our actions. This leads to inner purification and spiritual growth, ultimately freeing us from the cycle of birth and death.</p>
+            </div>
+            <div x-show="activeTab === 'bhakti'" class="text-gray-300">
+                <p>Bhakti yoga is the path of devotional service to the Divine. Krishna emphasizes that through loving devotion, we can transcend all material limitations and achieve the highest spiritual realization. Bhakti is accessible to all, regardless of social status or intellectual capacity.</p>
+            </div>
+        </div>
+            
+            
+            
+            <div id="wisdom" class="neo-glass rounded-3xl overflow-hidden p-8 transform transition duration-500 hover:scale-105">
+                <h2 class="text-3xl font-semibold text-neon-cyan mb-6">Bhagavad Gita Wisdom</h2>
+                <div class="space-y-8">
+                    <div>
+                        <p class="text-xl font-medium text-neon-green mb-3">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।</p>
+                        <p class="text-xl font-medium text-neon-green mb-4">मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥</p>
+                        <p class="text-gray-300">You have the right to work only, but never to its fruits. Let not the fruits of action be your motive, nor let your attachment be to inaction.</p>
+                    </div>
+                    <div>
+                        <p class="text-xl font-medium text-neon-green mb-3">योगस्थः कुरु कर्माणि सङ्गं त्यक्त्वा धनंजय।</p>
+                        <p class="text-xl font-medium text-neon-green mb-4">सिद्ध्यसिद्ध्योः समो भूत्वा समत्वं योग उच्यते॥</p>
+                        <p class="text-gray-300">Perform your duty equipoised, O Arjuna, abandoning all attachment to success or failure. Such equanimity is called yoga.</p>
+                    </div>
+                    <div>
+                        <p class="text-xl font-medium text-neon-green mb-3">उद्धरेदात्मनात्मानं नात्मानमवसादयेत् |</p>
+                        <p class="text-xl font-medium text-neon-green mb-4">आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः ||</p>
+                        <p class="text-gray-300">Elevate yourself through the power of your mind, and not degrade yourself, for the mind can be the friend and also the enemy of the self.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="advice" class="neo-glass rounded-3xl p-8 transform transition duration-500 hover:scale-105 mb-12">
+            <h2 class="text-3xl font-semibold text-neon-pink mb-6">Krsna's Advice to Students</h2>
+           <ol class="list-decimal space-y-6 pl-6">
+  <li class="font-semibold">Self-Discovery: <span class="font-normal">Explore your inner self to find your true purpose and passion.</span></li>
+  
+  <li class="font-semibold">Determination: <span class="font-normal">Stay committed to your goals, no matter how challenging they may seem.</span></li>
+  
+  <li class="font-semibold">Discipline: <span class="font-normal">Develop a strong work ethic to achieve academic success.</span></li>
+  
+
+  <li class="font-semibold">Focus: <span class="font-normal">Concentrate your energy on your studies and long-term goals.</span></li>
+  
+  
+  <li class="font-semibold">Time Management: <span class="font-normal">Make the most of your time by prioritizing tasks efficiently.</span></li>
+  
+
+</ol>
+        </div>
+        
+        <div id="leelas" class="neo-glass rounded-3xl p-8 transform transition duration-500 hover:scale-105 mb-12">
+            <h2 class="text-3xl font-semibold text-neon-cyan mb-6">Krsna's Divine Pastimes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-300">
+                <div>
+                    <h3 class="text-xl font-medium text-neon-green mb-3">Bal Leela</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Makhan Chor: Stealing butter from gopis</li>
+                        <li>Kaliya Mardan: Subduing the serpent Kaliya</li>
+                        <li>Govardhan Leela: Lifting Govardhan Hill</li>
+                        <li>Putana Vadha: Vanquishing the demoness Putana</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-medium text-neon-green mb-3">Vrindavan Leela</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Raas Leela: Divine dance with gopis</li>
+                        <li>Vastra Haran: Teaching a lesson to proud gopis</li>
+                        <li>Murli Manohar: Enchanting all with flute music</li>
+                        <li>Radha Krishna Pranaya: Divine love with Radha</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        
+     
+<div id="krishna-attributes" class="neo-glass rounded-3xl p-8 transform transition duration-500 hover:scale-105 mb-12">
+    <h2 class="text-3xl font-semibold text-neon-cyan mb-6">Krsna's Divine Attributes</h2>
+    
+    
+    <div x-data="{ activeAccordion: null }">
+        <div class="mb-4">
+            <button @click="activeAccordion = (activeAccordion === 1 ? null : 1)" class="flex justify-between items-center w-full p-4 bg-neon-blue text-white rounded-lg">
+                <span>The Flute (Murli)</span>
+                <svg :class="{'rotate-180': activeAccordion === 1}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div x-show="activeAccordion === 1" x-transition class="p-4 bg-gray-800 rounded-b-lg">
+                <p>Krishna's flute symbolizes the divine call that awakens the soul. Its melodious sound represents the harmony of creation and the allure of spiritual enlightenment.</p>
+            </div>
+        </div>
+        <div class="mb-4">
+            <button @click="activeAccordion = (activeAccordion === 2 ? null : 2)" class="flex justify-between items-center w-full p-4 bg-neon-purple text-white rounded-lg">
+                <span>Peacock Feather</span>
+                <svg :class="{'rotate-180': activeAccordion === 2}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div x-show="activeAccordion === 2" x-transition class="p-4 bg-gray-800 rounded-b-lg">
+                <p>The peacock feather adorning Krishna's crown represents beauty, grace, and the cycle of time. It symbolizes the transient nature of worldly pleasures and the eternal beauty of the divine.</p>
+            </div>
+        </div>
+        <div class="mb-4">
+            <button @click="activeAccordion = (activeAccordion === 3 ? null : 3)" class="flex justify-between items-center w-full p-4 bg-neon-pink text-white rounded-lg">
+                <span>Sudarshana Chakra</span>
+                <svg :class="{'rotate-180': activeAccordion === 3}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div x-show="activeAccordion === 3" x-transition class="p-4 bg-gray-800 rounded-b-lg">
+                <p>The celestial disc weapon of Krishna, Sudarshana Chakra, symbolizes the wheel of time and cosmic order. It represents divine protection and the destruction of ignorance.</p>
+            </div>
+        </div>
+    </div>
+
+ 
+
+    
+    <div class="mt-8" x-data="{ currentLeela: 0, leelas: [
+        { title: 'Lifting Govardhan Hill', description: 'Krishna lifted the Govardhan Hill on his little finger to protect the villagers from Indra\'s wrath, demonstrating his divine power and the importance of devotion over ritual worship.' },
+        { title: 'Stealing Butter', description: 'As a child, Krishna would steal butter from the gopis. This leela symbolizes the playful nature of the divine and how true devotion can \'steal\' the heart of God.' },
+        { title: 'Kaliya Mardan', description: 'Krishna subdued the poisonous serpent Kaliya, purifying the Yamuna river. This leela represents the triumph of good over evil and the purification of the soul.' }
+    ] }">
+        <h3 class="text-2xl font-semibold text-neon-green mb-4">Explore Krsna's Leelas</h3>
+        <div class="bg-gray-800 p-6 rounded-lg">
+            <h4 x-text="leelas[currentLeela].title" class="text-xl font-semibold text-neon-cyan mb-2"></h4>
+            <p x-text="leelas[currentLeela].description" class="text-gray-300 mb-4"></p>
+            <div class="flex justify-between">
+                <button @click="currentLeela = (currentLeela - 1 + leelas.length) % leelas.length" class="px-4 py-2 bg-neon-blue text-white rounded-full">&larr; Previous</button>
+                <button @click="currentLeela = (currentLeela + 1) % leelas.length" class="px-4 py-2 bg-neon-blue text-white rounded-full">Next &rarr;</button>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        
+        <div id="inspiration" class="neo-glass rounded-3xl p-8 transform transition duration-500 hover:scale-105 mb-12">
+            <h2 class="text-3xl font-semibold text-neon-cyan mb-6">Taking Krsna as Inspiration</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-neon-blue flex items-center justify-center animate-float">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neon-green mb-2">Duty</h3>
+                    <p class="text-gray-300">Perform your duties with dedication, regardless of the outcome</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-neon-purple flex items-center justify-center animate-float">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neon-green mb-2">Love</h3>
+                    <p class="text-gray-300">Cultivate unconditional love and compassion for all beings</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-neon-pink flex items-center justify-center animate-float">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neon-green mb-2">Leadership</h3>
+                    <p class="text-gray-300">Lead by example and inspire others to realize their potential</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="quote-generator" class="neo-glass rounded-3xl p-8 transform transition duration-500 hover:scale-105 mb-12" x-data="{ quote: '' }">
+            <h2 class="text-3xl font-semibold text-neon-cyan mb-6">Krsna Wisdom </h2>
+            <div class="text-center">
+                <button @click="quote = getRandomQuote()" class="bg-neon-blue text-white font-bold py-2 px-4 rounded-full hover:bg-neon-purple transition duration-300">
+                    click here
+                </button>
+                <p x-text="quote" class="mt-4 text-xl text-neon-green italic"></p>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center">
+            <p class="text-2xl text-neon-cyan font-semibold">May Lord Krsna divine grace illuminate your path to spiritual enlightenment.</p>
+            <p class="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink mt-4 font-bold animate-pulse">Happy Janmashtami ༗🪈</p>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-gray-300 py-4 mt-16 text-center">
+        <p>कृष्णं वन्दे जगद्गुरुम्</p>
+        <p>राधे राधे</p>
+    </footer>
+
+    <script>
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.getElementById('preloader').style.opacity = '0';
+            document.getElementById('preloader').style.transition = 'opacity 1s ease';
+            setTimeout(() => {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1000);
+        }, 3000); 
+    });
+
+    function getRandomQuote() {
+        const quotes = [
+            "Whatever action is performed by a great man, common men follow in his footsteps.",
+            "It is better to live your own destiny imperfectly than to live an imitation of somebody else's life with perfection.",
+            "The soul can never be cut to pieces by any weapon, nor burned by fire, nor moistened by water, nor withered by the wind.",
+            "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+            "The mind is restless and difficult to restrain, but it is subdued by practice.",
+            "Happiness is a state of mind, that has nothing to do with the external world."
+        ];
+        return quotes[Math.floor(Math.random() * quotes.length)];
+    }
+
+    tsParticles.load("tsparticles", {
+        particles: {
+            number: {
+                value: 100,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
+            },
+            color: {
+                value: ["#4361ee", "#7209b7", "#f72585", "#00fff5", "#39ff14"]
+            },
+            shape: {
+                type: "circle"
+            },
+            opacity: {
+                value: 0.5,
+                random: true
+            },
+            size: {
+                value: 3,
+                random: true
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: "none",
+                random: true,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+            }
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: "repulse"
+                },
+                onclick: {
+                    enable: true,
+                    mode: "push"
+                },
+                resize: true
+            }
+        },
+        retina_detect: true
+    });
+    </script>
+</body>
+</html>
